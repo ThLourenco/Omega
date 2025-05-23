@@ -1,0 +1,122 @@
+/* === VARIÁVEIS === */
+:root {
+  --bm-yellow: #bd1fcc;
+  --bm-white: #FFF;
+  --bm-overlay: rgba(0,0,0,0.6);
+  --bm-header-height: 80px;
+}
+
+/* Reset apenas para o banner */
+.bm-banner, .bm-banner * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container principal do banner */
+.bm-banner {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - var(--bm-header-height));
+  margin-top: var(--bm-header-height);
+  background: url('../recursos/Orange\ Black\ Modern\ Digital\ Marketing\ Presentation.png') center/cover no-repeat;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Camada escura */
+.bm-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--bm-overlay);
+  z-index: 1;
+}
+
+/* Faixa amarela inferior */
+.bm-banner::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: var(--bm-yellow);
+  z-index: 1;
+}
+
+/* Conteúdo textual */
+.bm-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 0 20px;
+  text-align: left;
+  color: var(--bm-white);
+}
+
+.bm-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em; /* Controle preciso do espaço entre os dois títulos */
+}
+
+.bm-title-light {
+  font-size: 8rem;
+  font-weight: 300;
+  margin: 0;
+  line-height: 0.9; /* Isso evita espaço vertical exagerado */
+  padding: 0;
+  opacity: 0;
+  animation: bm-slideInLeft 0.8s forwards;
+}
+
+.bm-title-bold {
+  font-size: 7rem;
+  font-weight: 800;
+  color: var(--bm-yellow);
+  margin: 0;
+  line-height: 0.9;
+    margin-bottom: 5rem; /* Cria distância entre "MARKETING" e o texto abaixo */
+  padding: 0;
+  opacity: 0;
+  animation: bm-slideInLeft 0.8s forwards 0.4s;
+}
+
+
+/* Parágrafo introdutório */
+.bm-intro {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5em;
+  opacity: 0;
+  animation: bm-fadeInUp 0.8s forwards .8s;
+}
+
+/* Lista de bullets */
+.bm-bullets {
+  list-style: disc inside;
+  font-size: 1rem;
+  line-height: 1.5;
+  opacity: 0;
+  animation: bm-fadeInUp 0.8s forwards 1.2s;
+}
+
+/* Animações específicas do banner */
+@keyframes bm-slideInLeft {
+  from { transform: translateX(-50px); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
+@keyframes bm-fadeInUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .bm-title-light { font-size: 2.2rem; }
+  .bm-title-bold  { font-size: 3.5rem; }
+  .bm-intro,
+  .bm-bullets    { font-size: 0.9rem; }
+}
