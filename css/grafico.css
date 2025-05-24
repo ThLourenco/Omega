@@ -1,124 +1,72 @@
-.main-container {
+/* styles.css */
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.containergrafico {
   display: flex;
-  flex-wrap: wrap;
-   max-width: 1200px;
-  gap: 50px; /* Antes: 40px → Reduzimos para aproximar o gráfico e o texto */
   align-items: flex-start;
   justify-content: space-between;
-    margin: 0 auto; /* para dar respiro do conteúdo acima */
+  padding: 2rem;
+  gap: 2rem;
 }
 
-/* COLUNA ESQUERDA */
-.left {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centraliza o título e o gráfico */
-    gap: 3rem; /* Espaçamento entre título e gráfico */
-}
-
-/* TÍTULO */
-.title {
-  font-size: 6rem; /* Antes: 3rem → mais compacto */
-  font-weight: bold;
-  line-height: 0.5; /* Antes: 1.2 → diminui o espaçamento entre linhas */
-  margin-top: 6rem;  /* OU mais: 3rem, 4rem, conforme desejar */
- 
-}
-
-/* WRAPPER DO GRÁFICO */
-.chart-wrapper {
-    width: 100%;
-    max-width: 800px;
-}
-
-/* GRÁFICO SVG */
-.chart {
-    width: 100%;   /* Faz o SVG crescer até o limite do container */
-    height: auto;  /* Mantém a proporção do viewBox */  
-    max-width: 100vw; /* Em telas pequenas, pode crescer até ocupar toda a largura */
-    display: block;   /* Remove espaços indesejados ao redor do SVG */
-}
-
-/* Mantém as cores e estilos originais do gráfico */
-.chart .grid line {
-  stroke: #333;
-  stroke-width: 1;
-}
-.chart .axis {
-  stroke: #555;
-  stroke-width: 2;
-}
-.chart polyline {
-  fill: none;
-  stroke-width: 3;
-  stroke-linejoin: round;
-  stroke-linecap: round;
-}
-.chart .serie1 { stroke: #e8c46b; }
-.chart .serie2 { stroke: #cf6060; }
-.chart .serie3 { stroke: #bd1fcc; }
-
-.chart .legend circle {
-  stroke: none;
-}
-.chart .legend text {
-  fill: #ccc;
-  font-size: 12px;
-}
-
-/* COLUNA DIREITA */
-.right {
+.left-col, .right-col {
   flex: 1;
-  min-width: 500px; /* leve ajuste */
-  max-width: 500px; /* Antes: 500px → reduzido para equilíbrio */
 }
 
-/* HASHTAG */
+.main-title {
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+.white-text { color: #fff; }
+.magenta-text { color: #c12fa7; }
+
+.chart-wrapper {
+  background: #111;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  max-width: 100%;
+}
+#lineChart { width: 100% !important; height: 300px !important; }
+
 .hashtag {
   display: flex;
   align-items: center;
-  margin-bottom: 16px; /* Antes: 16px → menos espaço */
-}
-
-.hashtag-square {
-  width: 16px; /* menor quadrado */
-  height: 16px;
-  background: #bd1fcc;
-  margin-right: 6px;
-}
-
-.hashtag-text {
+  margin-bottom: 1rem;
+  font-size: 1rem;
   font-weight: bold;
-  font-size: 1.625rem /* Antes: 1.2rem → compactado */
+}
+.hashtag-square {
+  width: 1rem;
+  height: 1rem;
+  background: #c12fa7;
+  margin-right: 0.5rem;
 }
 
-/* PARÁGRAFOS E LISTAS */
-.intro, .outro {
-  margin-bottom: 12px; /* Antes: 16px → menos espaço entre blocos */
-  line-height: 1.6; /* Antes: 1.6 → menos espaçado */
-   font-size: 1.4rem;
-}
-
-.details {
+.features {
   list-style: none;
-  margin-bottom: 12px;
-  padding-left: 0;
+  margin: 1rem 0;
+  padding-left: 1rem;
+}
+.features li { margin-bottom: 0.75rem; line-height: 1.4; }
+.features li strong { color: #c12fa7; }
+
+.intro, .conclusion { margin-bottom: 1rem; }
+
+/* Responsivo até 768px */
+@media (max-width: 768px) {
+  .containergrafico { flex-direction: column; }
+  .main-title { text-align: left; }
 }
 
-.details li {
-  position: relative;
-  padding-left: 1em;
-  margin-bottom: 12px; /* Antes: 12px → menos espaçamento */
-   font-size: 1.4rem;
+/* Responsivo até 450px */
+@media (max-width: 450px) {
+  .main-title { font-size: 2.5rem; }
+  .containergrafico { padding: 1rem; }
 }
-
-.details li::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  color: #bd1fcc;
-}
-.details li strong {
-  color: #bd1fcc;
-}
-

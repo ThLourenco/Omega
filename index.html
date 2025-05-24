@@ -5,8 +5,8 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	
+
+
 	<link href="css/styloo.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/banner.css">
 	<!-- Font Awesome (necessário para ícones) -->
@@ -14,41 +14,46 @@
 	<link rel="stylesheet" href="css/responsive.css">
 	<link rel="stylesheet" href="css/grafico.css">
 
+	 <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 	<title>site</title>
 
 </head>
 
 <body>
-  <!-- MENU -->
-  <div id="menu-bar">
-    <h1>Meu Site</h1>
-    <nav>
-      <ul>
-        <li><a href="#">Início</a></li>
-        <li><a href="#">Sobre</a></li>
-        <li><a href="#">Contato</a></li>
-      </ul>
-    </nav>
-  </div>
+	<!-- MENU -->
+	<div id="menu-bar">
+		<h1>Meu Site</h1>
+		<nav>
+			<ul>
+				<li><a href="#">Início</a></li>
+				<li><a href="#">Sobre</a></li>
+				<li><a href="#">Contato</a></li>
+			</ul>
+		</nav>
+	</div>
 
-  <!-- BANNER -->
-<section class="bm-banner">
-  <div class="bm-overlay"></div>
-  <div class="bm-content">
- <h1 class="bm-title-light">DIGITAL</h1>
-  <h2 class="bm-title-bold">MARKETING</h2>
+	<!-- BANNER -->
+	<section class="bm-banner">
+		<div class="bm-overlay"></div>
+		<div class="bm-content">
+			<h1 class="bm-title-light">DIGITAL</h1>
+			<h2 class="bm-title-bold">MARKETING</h2>
 
-    <p class="bm-intro">
-      Ajudamos empresas a se destacarem no ambiente digital com estratégias de marketing personalizadas, focadas em performance, visibilidade e conversão. Da criação de conteúdo à gestão de tráfego pago, somos o parceiro ideal para o crescimento do seu negócio.
-    </p>
+			<p class="bm-intro">
+				Ajudamos empresas a se destacarem no ambiente digital com estratégias de marketing personalizadas,
+				focadas em performance, visibilidade e conversão. Da criação de conteúdo à gestão de tráfego pago, somos
+				o parceiro ideal para o crescimento do seu negócio.
+			</p>
 
-    <ul class="bm-bullets">
-      <li>“Atraia, engaje e converta com estratégias sob medida para o seu negócio.”</li>
-      <li>“Desenvolvemos soluções digitais para aumentar sua visibilidade e vendas.”</li>
-      <li>“Sua marca na frente certa, para o público certo.”</li>
-    </ul>
-  </div>
-</section>
+			<ul class="bm-bullets">
+				<li>“Atraia, engaje e converta com estratégias sob medida para o seu negócio.”</li>
+				<li>“Desenvolvemos soluções digitais para aumentar sua visibilidade e vendas.”</li>
+				<li>“Sua marca na frente certa, para o público certo.”</li>
+			</ul>
+		</div>
+	</section>
 
 	<div id="conteudo-principal">
 		<!-- restante do conteúdo com max-width: 1200px -->
@@ -145,104 +150,50 @@
 
 
 		<!-- <img src="recursos/marketing planejato.png" width="100%"> -->
-
-
 		<!-- ============================
-     			container com grafito e texto
+     			CONTAINER GRAFICO
        		============================ -->
 
-		<!-- Container principal com nome único -->
-		<div class="main-container">
+		<!-- Coluna Direita: Texto -->
 
-			<!-- Coluna Esquerda -->
-			<div class="left">
-				<!-- Título em duas linhas -->
-				<h1 class="title">
-					<span class="title-top">Market</span><br>
-					<span class="title-bottom">Planejado</span>
+		<div class="containergrafico">
+			<!-- Coluna Esquerda: Título + Gráfico -->
+			<div class="left-col">
+				<h1 class="main-title">
+					<span class="white-text">Market</span><br />
+					<span class="magenta-text">Planejado</span>
 				</h1>
-
-				<!-- Gráfico em SVG -->
 				<div class="chart-wrapper">
-					<svg viewBox="0 0 500 300" class="chart">
-						<!-- Grade horizontal -->
-						<g class="grid">
-							<line x1="50" y1="50" x2="480" y2="50" />
-							<line x1="50" y1="100" x2="480" y2="100" />
-							<line x1="50" y1="150" x2="480" y2="150" />
-							<line x1="50" y1="200" x2="480" y2="200" />
-							<line x1="50" y1="250" x2="480" y2="250" />
-						</g>
-						<!-- Eixos -->
-						<line x1="50" y1="250" x2="480" y2="250" class="axis" />
-						<line x1="50" y1="50" x2="50" y2="250" class="axis" />
-
-						<!-- Três linhas do gráfico -->
-						<polyline class="serie1" points="50,250 100,200 150,180 200,190 250,170" />
-						<polyline class="serie2" points="50,230 100,210 150,240 200,215 250,195" />
-						<polyline class="serie3" points="50,210 100,240 150,220 200,200 250,180" />
-
-						<!-- Legenda -->
-						<g class="legend">
-							<circle cx="300" cy="70" r="6" class="serie1" />
-							<text x="315" y="75">Series 1</text>
-							<circle cx="300" cy="90" r="6" class="serie2" />
-							<text x="315" y="95">Series 2</text>
-							<circle cx="300" cy="110" r="6" class="serie3" />
-							<text x="315" y="115">Series 3</text>
-						</g>
-
-						<!-- Rótulos do eixo X -->
-						<text x="50" y="270">Item 1</text>
-						<text x="150" y="270">Item 2</text>
-						<text x="250" y="270">Item 3</text>
-						<text x="350" y="270">Item 4</text>
-						<text x="450" y="270">Item 5</text>
-					</svg>
+					<canvas id="lineChart"></canvas>
 				</div>
 			</div>
 
-			<!-- Coluna Direita -->
-			<div class="right">
-				<!-- Hashtag do topo -->
+			<!-- Coluna Direita: Texto -->
+			<div class="right-col">
 				<div class="hashtag">
 					<div class="hashtag-square"></div>
-					<span class="hashtag-text">#Foconoplanejamento</span>
+					<span>#Foconoplanejamento</span>
 				</div>
-
-				<!-- Texto introdutório -->
 				<p class="intro">
-					Oferecemos um planejamento estratégico focado em inovação, resultados e
-					relacionamento.
+					Oferecemos um planejamento estratégico focado em inovação, resultados e relacionamento.
 				</p>
-
-				<!-- Lista com destaques -->
-				<ul class="details">
-					<li><strong>Expansão de serviços digitais:</strong> intensificar a oferta de
-						marketing de performance, inbound marketing, automação e estratégias voltadas
-						para redes sociais e tráfego pago.</li>
-					<li><strong>Foco em dados e resultados:</strong> implementar ferramentas de análise
-						de dados para monitorar campanhas em tempo real e garantir decisões baseadas em
-						métricas.</li>
-					<li><strong>Parcerias estratégicas:</strong> estabelecer alianças com
-						influenciadores, desenvolvedores e empresas de tecnologia para ampliar a
-						capacidade de entrega.</li>
-					<li><strong>Relacionamento com o cliente:</strong> fortalecer a comunicação com os
-						clientes por meio de reuniões periódicas, relatórios personalizados e
-						acompanhamento contínuo dos resultados.</li>
+				<ul class="features">
+					<li><strong>Expansão de serviços digitais:</strong> intensificar a oferta de marketing de
+						performance, inbound marketing, automação e estratégias voltadas para redes sociais e tráfego
+						pago.</li>
+					<li><strong>Foco em dados e resultados:</strong> implementar ferramentas de análise de dados para
+						monitorar campanhas em tempo real e garantir decisões baseadas em métricas.</li>
+					<li><strong>Parcerias estratégicas:</strong> estabelecer alianças com influenciadores,
+						desenvolvedores e empresas de tecnologia para ampliar a capacidade de entrega.</li>
+					<li><strong>Relacionamento com o cliente:</strong> fortalecer a comunicação com os clientes por meio
+						de reuniões periódicas, relatórios personalizados e acompanhamento contínuo dos resultados.</li>
 				</ul>
-
-				<!-- Texto final -->
-				<p class="outro">
-					Nosso planejamento é guiado por uma visão de crescimento sustentável, com foco em
-					oferecer soluções relevantes, adaptáveis e altamente eficazes no cenário competitivo
-					do marketing atual.
+				<p class="conclusion">
+					Nosso planejamento é guiado por uma visão de crescimento sustentável, com foco em oferecer soluções
+					relevantes, adaptáveis e altamente eficazes no cenário competitivo do marketing atual.
 				</p>
 			</div>
-
 		</div>
-
-
 
 		<!--<img src="recursos/Blue Green Modern Bold Digital Marketing Presentation.png" width="100%"> -->
 
@@ -280,13 +231,12 @@
 			</div>
 		</section>
 	</div>
-	<script src="java/script.js"></script>
 	</div>
 	</div>
 
 	<!-- ============================
-     					rodape
-       					============================ -->
+     		rodape
+    ============================ -->
 
 	<footer class="footer-bar">
 		<div class="footer-container">
@@ -326,6 +276,8 @@
 			menu.classList.toggle('mostrar');
 		}
 	</script>
+	<script src="java/script.js"></script>
+	<script src="java/chard.js"></script>
 </body>
 
 </html>

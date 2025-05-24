@@ -60,3 +60,4 @@ window.addEventListener('load', animarAoScroll);
     observer.observe(section);
   });
 });
+

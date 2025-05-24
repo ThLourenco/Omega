@@ -5,14 +5,20 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  word-break: break-word;     /* Quebra palavras longas */
+  overflow-wrap: break-word;  /* Quebra de conteúdo longo */
+  min-width: 0;               /* Permite que o flexbox encolha elementos */
+  max-width: 100%;            /* Garante que nada ultrapasse */
 }
 
 html, body {
   width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
   font-family: 'Arial', sans-serif;
   background-color: #000;
   color: #fff;
+  font-size: 16px;
 }
 
 img, svg {
@@ -35,7 +41,6 @@ nav ul {
   display: none;
   flex-direction: column;
   position: absolute;
-  right: 0;
   top: 60px;
   background-color: rgba(0, 0, 0, 0.95);
   padding: 15px;
@@ -74,129 +79,42 @@ nav ul.mostrar {
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
-  overflow-x: hidden;
 }
 
-.left, .right {
-  flex: 1;
-  min-width: 300px;
-}
-
-/* Coluna direita com limite */
-.right {
-  max-width: 500px;
-}
 
 /* ============================================================
    TÍTULO EM DUAS LINHAS
    ============================================================ */
 .title {
-  font-size: 3rem;
+  font-size: clamp(1.8rem, 5vw, 3rem);
   font-weight: bold;
-  line-height: 1;
+  line-height: 1.1;
   margin-bottom: 24px;
+  word-break: break-word;
 }
 
 .title-top {
   display: block;
   color: #fff;
+  font-size: 6rem;
 }
 
 .title-bottom {
   display: block;
   color: #bd1fcc;
-}
-
-/* ============================================================
-   GRÁFICO SVG INLINE
-   ============================================================ */
-.chart-wrapper {
-  width: 100%;
-  max-width: 500px;
-  margin-bottom: 40px;
-  overflow-x: auto;
-}
-
-.chart {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.chart svg {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-}
-
-.chart .grid line {
-  stroke: #333;
-  stroke-width: 1;
-}
-
-.chart .axis {
-  stroke: #555;
-  stroke-width: 2;
-}
-
-.chart polyline {
-  fill: none;
-  stroke-width: 3;
-  stroke-linejoin: round;
-  stroke-linecap: round;
-}
-
-.chart .serie1 { stroke: #e8c46b; }
-.chart .serie2 { stroke: #cf6060; }
-.chart .serie3 { stroke: #bd1fcc; }
-
-.chart .legend circle {
-  stroke: none;
-}
-
-.chart .legend text {
-  fill: #ccc;
-  font-size: 12px;
-}
-
-.chart text {
-  fill: #ccc;
-  font-size: 12px;
+  font-size: 5rem;
 }
 
 /* ============================================================
    TEXTOS PERSONALIZADOS
    ============================================================ */
-.bm-title-light { font-size: 2.2rem; }
-.bm-title-bold { font-size: 3.5rem; }
+.bm-title-light { font-size: clamp(1.6rem, 4vw, 2.2rem); }
+.bm-title-bold { font-size: clamp(2rem, 5vw, 3.5rem); }
 .bm-intro, .bm-bullets { font-size: 0.9rem; }
 
 /* ============================================================
-   BLOCOS DE TEXTO E LISTA
+   LISTAS DETALHADAS
    ============================================================ */
-.hashtag {
-  display: flex;
-  align-items: center;
-  margin-bottom: 16px;
-}
-
-.hashtag-square {
-  width: 20px;
-  height: 20px;
-  background: #bd1fcc;
-  margin-right: 8px;
-}
-
-.hashtag-text {
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.intro, .outro {
-  margin-bottom: 16px;
-  line-height: 1.5;
-}
-
 .details {
   list-style: none;
   padding-left: 0;
@@ -205,8 +123,10 @@ nav ul.mostrar {
 
 .details li {
   position: relative;
-  padding-left: 1.2em;
+  padding-left: 1em;
   margin-bottom: 12px;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .details li::before {
@@ -222,76 +142,210 @@ nav ul.mostrar {
 }
 
 /* ============================================================
-   RESPONSIVIDADE: VERTICAL NO MOBILE
+   OUTROS AJUSTES PARA QUEBRAS DE TEXTO EM TODOS OS ELEMENTOS
+   ============================================================ */
+ p, li, h1, h2, h3, h4, h5, h6, span {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* ============================================================
+   RODAPÉ - TRABALHE CONOSCO E ÍCONES SOCIAIS
+   ============================================================ */
+
+.footer-container {
+  display: flex;                /* Define flexbox */
+  flex-direction: column;      /* Coloca conteúdo em coluna */
+  align-items: flex-start;     /* Alinha à esquerda */
+  gap: 16px;                   /* Espaçamento entre os blocos */
+  padding: 20px;               /* Espaçamento interno */
+  background-color: #111;      /* Cor de fundo do rodapé */
+}
+
+.trabalhe-conosco h2 {
+  font-size: 1.2rem;           /* Tamanho do título */
+  margin-bottom: 10px;
+  text-transform: uppercase;  /* Letras maiúsculas */
+}
+
+.trabalhe-conosco .info {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Ícones sociais ajustados para não ficarem espremidos */
+.icones-sociais {
+  display: flex;               /* Coloca lado a lado */
+  gap: 12px;                   /* Espaçamento entre ícones */
+  margin-top: 10px;
+}
+
+.icones-sociais img {
+  width: 24px;                 /* Tamanho dos ícones */
+  height: 24px;
+  transition: transform 0.3s;  /* Animação suave no hover */
+}
+
+.icones-sociais img:hover {
+  transform: scale(1.2);
+}
+
+/* Botão WhatsApp */
+.whatsapp-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #25D366;  /* Verde padrão WhatsApp */
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 50px;         /* Formato arredondado */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.whatsapp-button:hover {
+  background-color: #1ebc59;   /* Cor mais escura ao passar o mouse */
+  transform: scale(1.05);
+}
+
+/* ============================================================
+   RESPONSIVIDADE: MOBILE 768PX
    ============================================================ */
 @media (max-width: 768px) {
-
-  body {
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
   #conteudo-principal {
     width: 100%;
     max-width: 480px;
     margin: 0 auto;
   }
 
-  .main-container {
+  .quadradocards {
     flex-direction: column;
     align-items: center;
-    padding: 10px;
-    gap: 20px;
-    width: 100%;
   }
 
-  .left, .right {
-    min-width: 0;
-    width: 100%;
-    max-width: 100%;
+  .quadradocard {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .intro, .outro {
+    font-size: 0.85rem;
   }
 
   .title {
-    font-size: 2.4rem;
     text-align: center;
-    line-height: 1.2;
-    margin-top: 2rem;
   }
 
-  .chart-wrapper {
-    max-width: 100%;
-    margin-bottom: 24px;
-    overflow-x: auto;
+  .title-top,
+  .title-bottom {
+    text-align: left;
   }
 
-  .chart {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    display: block;
+ .main-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+    gap: 20px;
   }
 
-  .hashtag {
-    justify-content: center;
+  /* Rodapé adaptado para telas menores */
+  .footer-container {
+    gap: 12px;
+    padding: 10px;
+  }
+
+  .trabalhe-conosco h2 {
+    font-size: 1rem;
+  }
+
+  .trabalhe-conosco .info {
+    font-size: 0.8rem;
+  }
+
+  .icones-sociais img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .whatsapp-button {
+    font-size: 0.8rem;
+    padding: 6px 10px;
   }
 }
 
-@media (max-width: 480px) {
+/* ============================================================
+   RESPONSIVIDADE: MOBILE MENOR QUE 450PX - AJUSTADO E OTIMIZADO
+   ============================================================ */
+@media (max-width: 450px) {
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    height: 100%;
+  }
+
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 5px;
+    gap: 16px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  .left, .right {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 0 5px;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
 
   .title {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 1.2;
+    word-break: break-word;
   }
 
-  .hashtag-square {
-    width: 16px;
-    height: 16px;
+  .title-top, .title-bottom {
+    font-size: 2.5rem;
+    text-align: center;
+    line-height: 1.2;
+    word-break: break-word;
   }
 
-  .intro, .outro, .details li {
-    font-size: 0.95rem;
+  .containerquadrado h1 {
+    font-size: 2.2rem;
+    text-align: center;
+    line-height: 1.3;
+    padding: 0 5px;
+    word-break: break-word;
   }
 
-  .main-container, .left, .right, .chart-wrapper, .chart {
-    box-sizing: border-box;
+  .intro, .outro, .details li, .details li strong, .details p {
+    font-size: 0.6rem;
+    line-height: 1.4;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .icones-sociais img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .whatsapp-button {
+    font-size: 0.7rem;
+    padding: 4px 8px;
   }
 }
