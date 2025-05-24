@@ -101,16 +101,9 @@ nav ul.mostrar {
 
 .title-bottom {
   display: block;
-  color: #bd1fcc;
+  color: #f4b7c0;
   font-size: 5rem;
 }
-
-/* ============================================================
-   TEXTOS PERSONALIZADOS
-   ============================================================ */
-.bm-title-light { font-size: clamp(1.6rem, 4vw, 2.2rem); }
-.bm-title-bold { font-size: clamp(2rem, 5vw, 3.5rem); }
-.bm-intro, .bm-bullets { font-size: 0.9rem; }
 
 /* ============================================================
    LISTAS DETALHADAS
@@ -137,7 +130,7 @@ nav ul.mostrar {
 }
 
 .details li strong {
-  color: #bd1fcc;
+  color: #f4b7c0;
   font-weight: bold;
 }
 
@@ -217,12 +210,79 @@ nav ul.mostrar {
    RESPONSIVIDADE: MOBILE 768PX
    ============================================================ */
 @media (max-width: 768px) {
+  /* ============================================================
+   TEXTOS PERSONALIZADOS
+   ============================================================ */
+.bm-title-light { font-size: clamp(1.6rem, 4vw, 2.2rem); }
+.bm-title-bold { font-size: clamp(2rem, 5vw, 3.5rem); }
+.bm-intro, .bm-bullets { font-size: 0.9rem; }
+
   #conteudo-principal {
     width: 100%;
     max-width: 480px;
     margin: 0 auto;
   }
 
+    /*banner text*/
+  .bm-title-light {
+  font-size: 3rem;
+  font-weight: 300;
+  margin: 0;
+  line-height: 0.9; /* Isso evita espaço vertical exagerado */
+  padding: 0;
+  opacity: 0;
+  animation: bm-slideInLeft 0.8s forwards;
+}
+
+.bm-title-bold {
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--bm-yellow);
+  margin: 0;
+  line-height: 0.9;
+    margin-bottom: 5rem; /* Cria distância entre "MARKETING" e o texto abaixo */
+  padding: 0;
+  opacity: 0;
+  animation: bm-slideInLeft 0.8s forwards 0.4s;
+}
+
+.bm-intro {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5em;
+  opacity: 0;
+  animation: bm-fadeInUp 0.8s forwards .8s;
+}
+
+/* Lista de bullets */
+.bm-bullets {
+  list-style: disc inside;
+  font-size: 1rem;
+  line-height: 1.5;
+  opacity: 0;
+  animation: bm-fadeInUp 0.8s forwards 1.2s;
+}
+
+    /*texto lado*/
+    .texto-lado p {
+     font-size: 1rem;
+  }
+
+.texto-lado h2 {
+  font-size: 2.2rem;
+  line-height: 1.2;
+  word-break: keep-all;
+  white-space: normal;
+}
+
+/*texto h1 dos quadrados*/
+ .containerquadrado h1 {
+    font-size: 3rem;
+    text-align: center;
+    line-height: 1;
+    padding: 0 5px;
+    word-break: break-word;
+  }
   .quadradocards {
     flex-direction: column;
     align-items: center;
@@ -289,6 +349,60 @@ nav ul.mostrar {
     height: 100%;
   }
 
+  /*banner text*/
+  .bm-title-light {
+  font-size: 2rem;
+  font-weight: 300;
+  margin: 0;
+  line-height: 0.9; /* Isso evita espaço vertical exagerado */
+  padding: 0;
+  opacity: 0;
+  animation: bm-slideInLeft 0.8s forwards;
+}
+
+.bm-title-bold {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--bm-yellow);
+  margin: 0;
+  line-height: 0.9;
+    margin-bottom: 5rem; /* Cria distância entre "MARKETING" e o texto abaixo */
+  padding: 0;
+  opacity: 0;
+  animation: bm-slideInLeft 0.8s forwards 0.4s;
+}
+
+.bm-intro {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5em;
+  opacity: 0;
+  animation: bm-fadeInUp 0.8s forwards .8s;
+}
+
+/* Lista de bullets */
+.bm-bullets {
+  list-style: disc inside;
+  font-size: 1rem;
+  line-height: 1.5;
+  opacity: 0;
+  animation: bm-fadeInUp 0.8s forwards 1.2s;
+}
+
+  /*texto lado*/
+    .texto-lado p {
+     
+     font-size: 1rem;
+  }
+
+  .texto-lado h2 {
+  font-size: 2.2rem;
+  line-height: 1.2;
+  word-break: keep-all;
+  white-space: normal;
+}
+
+
   .main-container {
     flex-direction: column;
     align-items: center;
@@ -298,16 +412,6 @@ nav ul.mostrar {
     max-width: 100%;
     overflow-x: hidden;
     box-sizing: border-box;
-  }
-
-  .left, .right {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    padding: 0 5px;
-    box-sizing: border-box;
-    overflow-wrap: break-word;
-    word-break: break-word;
   }
 
   .title {
@@ -325,9 +429,9 @@ nav ul.mostrar {
   }
 
   .containerquadrado h1 {
-    font-size: 2.2rem;
+    font-size: 3rem;
     text-align: center;
-    line-height: 1.3;
+    line-height: 1;
     padding: 0 5px;
     word-break: break-word;
   }

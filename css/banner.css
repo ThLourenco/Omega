@@ -1,6 +1,6 @@
 /* === VARIÁVEIS === */
 :root {
-  --bm-yellow: #bd1fcc;
+  --bm-yellow: #f4b7c0;
   --bm-white: #FFF;
   --bm-overlay: rgba(0,0,0,0.6);
   --bm-header-height: 80px;
@@ -63,7 +63,7 @@
 }
 
 .bm-title-light {
-  font-size: 8rem;
+  font-size: 7rem;
   font-weight: 300;
   margin: 0;
   line-height: 0.9; /* Isso evita espaço vertical exagerado */
@@ -73,7 +73,7 @@
 }
 
 .bm-title-bold {
-  font-size: 7rem;
+  font-size: 10rem;
   font-weight: 800;
   color: var(--bm-yellow);
   margin: 0;
@@ -87,7 +87,7 @@
 
 /* Parágrafo introdutório */
 .bm-intro {
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1.6;
   margin-bottom: 1.5em;
   opacity: 0;
@@ -97,7 +97,7 @@
 /* Lista de bullets */
 .bm-bullets {
   list-style: disc inside;
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1.5;
   opacity: 0;
   animation: bm-fadeInUp 0.8s forwards 1.2s;

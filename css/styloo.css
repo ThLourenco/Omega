@@ -7,7 +7,7 @@
   }
 
   :root {
-    --pink-dark: #C2185B;
+    --pink-dark: #d60686;
     --white: #FFF;
     --overlay: rgba(0,0,0,0.6);
     --header-height: 80px; /* ajuste se mudar a altura do menu */
@@ -30,34 +30,109 @@
     background-color: #000;
   }
 
-  /* === CABEÇALHO E MENU === */
+:root {
+  --header-height: 80px;
+}
+
+/*MENU BAR*/
+
+/* Estilo geral do menu */
 #menu-bar {
-  position: relative;            /* volta a rolar com a página */
-  background: rgba(255, 0, 123, 0.3); /* rosa translúcido */
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
-  height: var(--header-height);
-  z-index: 10; 
-}
-#menu-bar h1 {
-  margin-right: auto;
+  background-color: #000;
   color: #fff;
-  font-size: 1.5rem;
+  padding: 10px 20px;
+  position: relative;
 }
-#menu-bar nav ul {
+
+/* Logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  font-size: 28px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-title {
+  font-weight: bold;
+}
+
+.logo-subtitle {
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* Botão de menu (hambúrguer) */
+.menu-toggle {
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+}
+
+/* Menu links - desktop */
+.menu-links {
   display: flex;
 }
-#menu-bar nav a {
-  color: #fff;
+
+.menu-links ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 30px;
+}
+
+.menu-links li a {
+  color: white;
   text-decoration: none;
-}
-#menu-bar nav a:hover {
-  color: #e91e63;
+  font-size: 16px;
+  transition: color 0.3s;
 }
 
+.menu-links li a:hover {
+  color: #00f0ff;
+}
 
+/* Responsividade */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #000;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .menu-links.open {
+    display: block;
+  }
+
+  .menu-links ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .menu-links li a {
+    font-size: 18px;
+  }
+}
+
+/*fim menu bar*/
   header {
     display: flex;
     justify-content: space-between;
@@ -133,13 +208,13 @@
   }
 
   .ecossistema-title h1 span {
-    color: #e91e63; /* Rosa */
+    color: #d60686; /* Rosa */
   }
 
   .ecossistema-underline {
     width: 120px;
     height: 4px;
-    background: #e91e63;
+    background: #d60686;
     margin-top: 10px;
   }
 
@@ -162,7 +237,7 @@
   .ecossistema-border-top,
   .ecossistema-border-bottom {
     height: 2px;
-    background-color: #e91e63;
+    background-color: #d60686;
     width: 100%;
     margin: 10px 0;
   }
@@ -240,7 +315,7 @@
   }
 
   .texto-lado h2 {
-    color: #e91e63;
+    color: #f4b7c0;
     font-size: 48px;
     margin-top: 0;
     margin-bottom: 30px;
