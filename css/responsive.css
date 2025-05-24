@@ -1,0 +1,245 @@
+/* ============================================================
+   RESET GERAL & ESTILOS BASE
+   ============================================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   MENU RESPONSIVO (HAMBURGUER)
+   ============================================================ */
+.menu-toggle {
+  display: none;           /* só aparece em mobile */
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 1001;
+  }
+  nav ul.mostrar {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* ============================================================
+   BANNER & IMAGENS SIDE-BY-SIDE
+   ============================================================ */
+.imagem-banner img {
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 768px) {
+  .imagem-banner img {
+    /* trocar para banner mobile, se quiser */
+    content: url('../recursos/Purple Black Modern Marketing Plan Presentation.png');
+  }
+}
+
+/* ============================================================
+   SEÇÃO MARKET PLANEJADO – LAYOUT PRINCIPAL
+   ============================================================ */
+/* substitua .container por .main-container para não conflitar */
+.main-container {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Coluna esquerda */
+.left {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Coluna direita */
+.right {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+/* ============================================================
+   TÍTULO EM DUAS LINHAS
+   ============================================================ */
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 24px;
+}
+.title-top {
+  display: block;
+  color: #fff;       /* parte de cima: branca */
+}
+.title-bottom {
+  display: block;
+  color: #bd1fcc;    /* parte de baixo: rosa */
+}
+
+/* ============================================================
+   GRÁFICO SVG INLINE
+   ============================================================ */
+.chart-wrapper {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 40px;
+}
+.chart {
+  width: 100%;
+  height: auto;
+}
+.chart .grid line {
+  stroke: #333;
+  stroke-width: 1;
+}
+.chart .axis {
+  stroke: #555;
+  stroke-width: 2;
+}
+.chart polyline {
+  fill: none;
+  stroke-width: 3;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.chart .serie1 { stroke: #e8c46b; } /* amarelo */
+.chart .serie2 { stroke: #cf6060; } /* vermelho */
+.chart .serie3 { stroke: #bd1fcc; } /* magenta */
+.chart .legend circle {
+  stroke: none;
+}
+.chart .legend text {
+  fill: #ccc;
+  font-size: 12px;
+}
+/* rótulos X */
+.chart text {
+  fill: #ccc;
+  font-size: 12px;
+}
+
+/* ============================================================
+   BLOCOS DE TEXTO E LISTA
+   ============================================================ */
+.hashtag {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.hashtag-square {
+  width: 20px;
+  height: 20px;
+  background: #bd1fcc;
+  margin-right: 8px;
+}
+.hashtag-text {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.intro,
+.outro {
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+.details {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 16px;
+}
+.details li {
+  position: relative;
+  padding-left: 1.2em;
+  margin-bottom: 12px;
+}
+.details li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #555;
+}
+.details li strong {
+  color: #bd1fcc;
+  font-weight: bold;
+}
+
+/* ============================================================
+   RESPONSIVIDADE: VERTICAL NO MOBILE
+   ============================================================ */
+@media (max-width: 768px) {
+
+  
+  /* empilha tudo verticalmente */
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 30px;
+  }
+  /* centraliza título */
+  .title {
+    text-align: center;
+  }
+  /* diminui o título */
+  .title {
+    font-size: 2.4rem;
+  }
+  /* ajusta tamanho do gráfico */
+  .chart-wrapper {
+    max-width: 100%;
+    margin-bottom: 24px;
+  }
+  /* texto ocupa full width */
+  .right {
+    max-width: 100%;
+  }
+  /* centraliza hashtag */
+  .hashtag {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  /* título ainda menor */
+  .title {
+    font-size: 2rem;
+  }
+  /* quadrado menor */
+  .hashtag-square {
+    width: 16px;
+    height: 16px;
+  }
+  /* texto menor */
+  .intro, .outro, .details li {
+    font-size: 0.95rem;
+  }
+}

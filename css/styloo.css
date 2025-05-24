@@ -1,0 +1,436 @@
+  /* === FONTE PERSONALIZADA === */
+  @font-face {
+    font-family: 'MinhaFonte';
+    src: url('../recursos/fontes/Haldenweg.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  :root {
+    --pink-dark: #C2185B;
+    --white: #FFF;
+    --overlay: rgba(0,0,0,0.6);
+    --header-height: 80px; /* ajuste se mudar a altura do menu */
+  }
+
+  /* === RESET BÁSICO === */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* === CONFIGURAÇÃO GERAL === */
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-family: 'MinhaFonte', sans-serif;
+    background-color: #000;
+  }
+
+  /* === CABEÇALHO E MENU === */
+#menu-bar {
+  position: relative;            /* volta a rolar com a página */
+  background: rgba(255, 0, 123, 0.3); /* rosa translúcido */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 40px;
+  height: var(--header-height);
+  z-index: 10; 
+}
+#menu-bar h1 {
+  margin-right: auto;
+  color: #fff;
+  font-size: 1.5rem;
+}
+#menu-bar nav ul {
+  display: flex;
+}
+#menu-bar nav a {
+  color: #fff;
+  text-decoration: none;
+}
+#menu-bar nav a:hover {
+  color: #e91e63;
+}
+
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  #titulo-title h1 {
+    margin: 0;
+    font-size: 28px;
+  }
+
+  nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    color: rgb(132, 14, 201);
+    transition: 0.3s all;
+  }
+
+  /* === CONTEÚDO PRINCIPAL === */
+  #conteudo-principal {
+    margin-top: 100px; /* ajuste conforme a altura do #menu-bar */
+    max-width: 1400px;
+    margin: 180px auto 0 auto; /* Aumentado de 120px para 180px */
+    padding: 30px 15px;
+    background-color: #000;
+    box-sizing: border-box;
+  }
+  /* === BANNER === */
+  .imagem-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ============================================================
+    animaçao iniciaro
+    ============================================================ */
+
+
+  /* === ECOSSISTEMA DIGITAL === */
+  .ecossistema {
+    background-color: #000;
+    padding: 80px 20px;
+    color: #fff;
+    font-family: 'Exo', sans-serif;
+  }
+
+  /* Título */
+  .ecossistema-title {
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ecossistema-title h1 {
+    font-size: 3rem;
+    color: #fff;
+    margin: 0;
+  }
+
+  .ecossistema-title h1 span {
+    color: #e91e63; /* Rosa */
+  }
+
+  .ecossistema-underline {
+    width: 120px;
+    height: 4px;
+    background: #e91e63;
+    margin-top: 10px;
+  }
+
+  /* Blocos de cada item */
+  .ecossistema-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-in-out;
+  }
+
+  /* Mostra o bloco ao rolar */
+  .ecossistema-section.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Linhas rosa acima e abaixo de cada bloco */
+  .ecossistema-border-top,
+  .ecossistema-border-bottom {
+    height: 2px;
+    background-color: #e91e63;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  /* Conteúdo principal da seção */
+  .ecossistema-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 0;
+  }
+
+  /* Bloco com ícone e título */
+  .ecossistema-icon-text {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+  }
+
+  /* Ícone "𝑒" */
+  .ecossistema-icon {
+    font-size: 3.5rem; /* <<< TAMANHO DO ÍCONE */
+  }
+
+  .ecossistema-orange { color: #f25008; }
+  .ecossistema-green  { color: #00c04b; }
+  .ecossistema-yellow { color: #ffc107; }
+
+  /* Detalhes do lado direito */
+  .ecossistema-details {
+    text-align: left;       /* <<< ALINHAMENTO DO TEXTO */
+    flex: 1;
+    font-size: 1.3rem;      /* <<< TAMANHO DO TEXTO */
+    color: #fff;
+    line-height: 1.6;
+  }
+
+  /* === BLOCO DE TEXTO E IMAGEM LADO A LADO === */
+  .bloco-simples {
+    display: flex;
+    align-items: center; /* ← Alinha imagem e texto no meio */
+    gap: 50px; /* ← Espaço entre imagem e texto */
+    flex-wrap: wrap; /* ← Faz quebrar para mobile */
+    justify-content: center; /* ← Centraliza melhor */
+    padding: 40px;
+  }
+
+
+
+  .imagem-lado img:hover {
+    transform: scale(1.05) rotate(1deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+  }
+
+  .imagem-lado img {
+    max-width: 600px; /* ← aumenta o limite, pode ser até 600px dependendo do espaço */
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+  }
+
+  .texto-lado {
+    max-width: 600px;
+    font-size: 20px;
+    line-height: 1.6;
+    color: white;
+  }
+
+  .texto-lado:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  }
+
+  .texto-lado h2 {
+    color: #e91e63;
+    font-size: 48px;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+
+  .texto-lado p {
+    margin-bottom: 20px; /* Espaço entre os parágrafos */
+  }
+
+  /*quadrado  3 quadrados*/
+
+  .containerquadrado {
+      max-width: 1400px;
+      width: 85%;  
+      margin: 0 auto;
+      text-align: center;
+  }
+
+  .containerquadrado h1 {
+      font-size: 2rem;
+      margin-bottom: 0px;
+  }
+
+  /* Layout dos quadrados */
+  .quadradocards {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+  }
+
+  .quadradocard {
+      flex: 1 1 80px !important;
+      height: 250px;   
+    padding: 10px 30px;
+      border-radius: 10px;
+      color: #fff;
+      background: linear-gradient(135deg, #ff6b6b, #845ec2);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+  }
+
+  .quadradocard:hover {
+      transform: translateY(-5px);
+  }
+
+  /* Cores específicas */
+  .quadradocard-azul {
+      background: linear-gradient(135deg, #3b82f6, #ec4899);
+  }
+
+  .quadradocard-vermelho {
+      background: linear-gradient(135deg, #f87171, #8b5cf6);
+  }
+
+  .quadradocard-roxo {
+      background: linear-gradient(135deg, #f87171, #a855f7);
+  }
+
+  .containerquadrado h1 {
+      font-size: 4rem; /* ou 48px */
+      font-weight: 800; /* bem pesado */
+      text-align: center;
+      line-height: 1.3; /* espaçamento entre as linhas */
+      margin: 40px auto 90px auto; /* Aumenta o espaço inferior de 40px para 80px */
+      max-width: 800px; /* opcional, para não ocupar toda a tela */
+      color: #fff; /* mantém o branco */
+  }
+
+  .quadradocard h2 {
+      margin-bottom: 16px;
+      font-size: 1.4rem;
+      font-weight: 700;
+  }
+
+  .quadradocard p, .quadradocard ul {
+      font-size: 1rem;
+      line-height: 1.6;
+  }
+
+  .quadradocard ul {
+      list-style: none;
+      margin-top: 10px;
+  }
+
+  /* === DECORAÇÃO DOS CANTOS === */
+  .decoracao-cantos {
+    position: relative;
+    padding: 20px;
+  }
+
+
+
+  .decoracao-cantos::before,
+  .decoracao-cantos::after {
+    content: "";
+    position: absolute;
+    background-color: #e91e63;
+  }
+
+  .decoracao-cantos::before {
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 50px;
+    box-shadow: calc(100% - 50px) 100% 0 0 #e91e63;
+  }
+
+  .decoracao-cantos::after {
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 50px;
+    box-shadow: -100% calc(100% - 50px) 0 0 #e91e63;
+  }
+
+
+  /* === RODAPÉ === */
+  .footer-bar {
+    width: 100%;
+    background-color: #000;
+    padding: 20px 0;
+    margin-top: 60px;
+    box-sizing: border-box;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: auto;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .trabalhe-conosco {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .trabalhe-conosco h2 {
+    margin-bottom: 10px;
+  }
+
+  .trabalhe-conosco .info {
+    font-size: 16px;
+  }
+
+  .icones-sociais {
+    display: flex;
+    gap: 20px;
+  }
+
+  .icones-sociais img {
+    width: 30px;
+    height: 30px;
+    transition: opacity 0.3s;
+  }
+
+  .icones-sociais img:hover {
+    opacity: 0.7;
+  }
+
+  /* === BOTÃO WHATSAPP FLUTUANTE === */
+  .whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50px;
+    padding: 15px 20px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    animation: pulse 1.5s infinite;
+    z-index: 1000;
+  }
+
+  .whatsapp-button i {
+    font-size: 24px;
+  }
+
+  @keyframes pulse {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
