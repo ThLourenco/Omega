@@ -4,25 +4,25 @@ function createChart() {
   new Chart(ctx, {
     type: 'line',
     data: {
-      labels: ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'],
+      labels: ['AGO', 'SET', 'OUT', 'NOV', 'DEZ'],
       datasets: [
         {
-          label: 'Series 1',
-          data: [0, 10, 20, 30, 40],
+          label: 'VENDAS',
+          data: [40, 80, 85, 95, 110],
           borderColor: '#FFD700',
           fill: false,
           tension: 0.4
         },
         {
-          label: 'Series 2',
-          data: [10, 20, 10, 30, 50],
+          label: 'ENGAJAMENTO',
+          data: [30, 70, 80, 100, 110],
           borderColor: '#FF69B4',
           fill: false,
           tension: 0.4
         },
         {
-          label: 'Series 3',
-          data: [20, 30, 15, 40, 30],
+          label: 'CAPTACÂO',
+          data: [35, 90, 65, 90, 100],
           borderColor: '#DA70D6',
           fill: false,
           tension: 0.4
@@ -33,7 +33,7 @@ function createChart() {
       responsive: true,
       maintainAspectRatio: false,
       animation: {
-        duration: 2000,
+        duration: 3000,
         easing: 'easeInOutQuart'
       },
       scales: {
@@ -60,7 +60,7 @@ function createChart() {
 
 document.addEventListener('DOMContentLoaded', () => {
   const chartCanvas = document.getElementById('lineChart');
-  let chartLoaded = false;
+  let chartLoaded = false;  
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const menu = document.getElementById('nav-links');
     menu.classList.toggle('open');
   }
+
 
 
 

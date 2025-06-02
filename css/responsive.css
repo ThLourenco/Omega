@@ -27,36 +27,6 @@ img, svg {
   display: block;
 }
 
-/* ============================================================
-   MENU RESPONSIVO (HAMBURGUER)
-   ============================================================ */
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  color: #fff;
-  cursor: pointer;
-}
-
-nav ul {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 60px;
-  background-color: rgba(0, 0, 0, 0.95);
-  padding: 15px;
-  border-radius: 8px;
-  z-index: 1001;
-  width: 80vw;
-  max-width: 300px;
-}
-
-nav ul.mostrar {
-  display: flex;
-}
-
-.menu-toggle {
-  display: block;
-}
 
 /* ============================================================
    BANNER & IMAGENS SIDE-BY-SIDE
@@ -140,19 +110,6 @@ nav ul.mostrar {
  p, li, h1, h2, h3, h4, h5, h6, span {
   word-break: break-word;
   overflow-wrap: break-word;
-}
-
-/* ============================================================
-   RODAPÉ - TRABALHE CONOSCO E ÍCONES SOCIAIS
-   ============================================================ */
-
-.footer-container {
-  display: flex;                /* Define flexbox */
-  flex-direction: column;      /* Coloca conteúdo em coluna */
-  align-items: flex-start;     /* Alinha à esquerda */
-  gap: 16px;                   /* Espaçamento entre os blocos */
-  padding: 20px;               /* Espaçamento interno */
-  background-color: #111;      /* Cor de fundo do rodapé */
 }
 
 .trabalhe-conosco h2 {
@@ -311,12 +268,6 @@ nav ul.mostrar {
     align-items: center;
     padding: 20px 10px;
     gap: 20px;
-  }
-
-  /* Rodapé adaptado para telas menores */
-  .footer-container {
-    gap: 12px;
-    padding: 10px;
   }
 
   .trabalhe-conosco h2 {

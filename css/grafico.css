@@ -39,7 +39,7 @@ body {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: bold;
 }
 .hashtag-square {
@@ -51,14 +51,14 @@ body {
 
 .features {
   list-style: none;
-  font-size: 1rem;
+  font-size: 1.25rem;
   margin: 1rem 0;
   padding-left: 1rem;
 }
 .features li { margin-bottom: 0.75rem; line-height: 1.4; }
 .features li strong { color: #d60686; }
 
-.intro, .conclusion { margin-bottom: 1rem;   font-size: 1rem;}
+.intro, .conclusion { margin-bottom: 1rem;   font-size: 1.25rem;}
 
 /* Responsivo até 768px */
 @media (max-width: 768px) {

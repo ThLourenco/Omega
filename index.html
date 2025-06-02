@@ -14,52 +14,63 @@
 	<link rel="stylesheet" href="css/responsive.css">
 	<link rel="stylesheet" href="css/grafico.css">
 
-	 <!-- Chart.js CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<!-- Chart.js CDN -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-	<title>site</title>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat:wdth,wght@100..900&family=Open+Sans:ital,wght@0,300&display=swap"
+		rel="stylesheet">
+
+	<title>Ômega Marketing Digital</title>
 
 </head>
 
 <body>
 	<!-- MENU -->
-<header id="menu-bar">
-  <div class="logo-container">
-    <span class="logo-icon">Ω</span>
-    <div class="logo-text">
-      <span class="logo-title">Ômega</span>
-      <span class="logo-subtitle">Marketing Digital</span>
-    </div>
-  </div>
+	<header id="menu-bar">
+		<div class="logo-container">
+			<img class="logo-icon" src="recursos/logo.png" alt="Logo Ômega" />
 
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+			<div class="logo-text">
+				<span class="logo-title">Ômega</span>
+				<span class="logo-subtitle">Marketing Digital</span>
+			</div>
+		</div>
 
-  <div class="menu-links" id="nav-links">
-    <ul>
-      <li><a href="#">Início</a></li>
-      <li><a href="#">Sobre</a></li>
-      <li><a href="#">Contato</a></li>
-    </ul>
-  </div>
-</header>
+		<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+		<div class="menu-links" id="nav-links">
+			<ul>
+				<li><a href="#bm-banner">Inicio</a></li>
+				<li><a href="#eco-Sistema">Eco Sistema</a></li>
+				<li><a href="#Marketing-Planejado">Marketing Planejado</a></li>
+				<li><a href="#sobre-nos">Sobre Nós</a></li>
+			</ul>
+		</div>
+	</header>
 
 	<!-- BANNER -->
-	<section class="bm-banner">
+	<section class="bm-banner" id="bm-banner">
 		<div class="bm-overlay"></div>
 		<div class="bm-content">
-			<h1 class="bm-title-light">DIGITAL</h1>
-			<h2 class="bm-title-bold">MARKETING</h2>
 
-			<p class="bm-intro">
-				Ajudamos empresas a se destacarem no ambiente digital com estratégias de marketing personalizadas,
-				focadas em performance, visibilidade e conversão. Da criação de conteúdo à gestão de tráfego pago, somos
-				o parceiro ideal para o crescimento do seu negócio.
-			</p>
+			<!-- SLOGAN COM ANIMAÇÃO -->
+			<p class="bm-slogan-entry animate-slogan">Você projeta, a Ômega realiza.</p>
 
+			<!-- TÍTULOS -->
+			<h1 class="bm-title-light">TRANSFORME</h1>
+			<h2 class="bm-title-bold">SEU NEGÓCIO</h2>
+
+			<!--
+    TEXTO DE APOIO 
+    <p class="bm-intro">
+       Posicione sua marca no topo com estratégias digitais que geram resultados reais. A Ômega conecta sua empresa ao público certo, no momento certo — com performance, visibilidade e conversão.
+    </p>-->
+
+			<!-- BULLETS -->
 			<ul class="bm-bullets">
-				<li>“Atraia, engaje e converta com estratégias sob medida para o seu negócio.”</li>
-				<li>“Desenvolvemos soluções digitais para aumentar sua visibilidade e vendas.”</li>
-				<li>“Sua marca na frente certa, para o público certo.”</li>
+				<li>“Criamos campanhas que atraem, engajam e vendem.”</li>
+				<li>“Resultados medidos em cliques, conversões e crescimento.”</li>
+				<li>“Você projeta, a Ômega realiza.”</li>
 			</ul>
 		</div>
 	</section>
@@ -67,7 +78,7 @@
 	<div id="conteudo-principal">
 		<!-- restante do conteúdo com max-width: 1200px -->
 
-		<div class="ecossistema-title">
+		<div class="ecossistema-title" id="eco-Sistema">
 			<h1>Ecossistema <span>Digital</span></h1>
 			<div class="ecossistema-underline"></div>
 		</div>
@@ -96,7 +107,7 @@
 					<h2>performance</h2>
 				</div>
 				<div class="ecossistema-details">
-					Gestão de tráfego para todos os canais digitais
+					<div>Gestão de tráfego para todos os canais digitais</div>
 				</div>
 			</div>
 			<div class="ecossistema-border-bottom"></div>
@@ -165,7 +176,7 @@
 
 		<!-- Coluna Direita: Texto -->
 
-		<div class="containergrafico">
+		<div class="containergrafico" id="Marketing-Planejado">
 			<!-- Coluna Esquerda: Título + Gráfico -->
 			<div class="left-col">
 				<h1 class="main-title">
@@ -243,42 +254,66 @@
 	</div>
 	</div>
 
+	<section class="sobre-nos" id="sobre-nos">
+		<h2 class="subtitulo">SOBRE NÓS</h2>
+		<h1 class="titulo">Esse lugar é especial...</h1>
+
+		<div class="texto-principal">
+			<p>
+				Na <strong>Ômega Marketing Digital</strong>, acreditamos que toda grande ideia merece ser comunicada com
+				impacto e estratégia. Somos uma empresa especializada em marketing digital, dedicada a transformar
+				projetos em resultados concretos.
+			</p>
+			<p>
+				Com uma equipe criativa e estratégica, atuamos em diversas frentes — branding, mídias sociais,
+				performance, SEO e marketing de conteúdo — sempre com foco na geração de valor para nossos clientes.
+				Nosso compromisso vai além de divulgar: queremos impulsionar negócios, construir marcas sólidas e
+				fortalecer a presença digital de quem confia no nosso trabalho.
+			</p>
+			<p>
+				Acreditamos no poder da colaboração e da inovação para criar campanhas que se destacam e geram conexões
+				reais com o público.
+			</p>
+			<p>
+				Nosso slogan resume a essência do que fazemos:<br>
+				<em>"Você projeta, a Ômega realiza."</em>
+			</p>
+		</div>
+		</div>
+	</section>
+
 	<!-- ============================
      		rodape
     ============================ -->
 
 	<footer class="footer-bar">
 		<div class="footer-container">
-			<div class="trabalhe-conosco">
-				<h2>TRABALHE CONOSCO</h2>
-				<div class="info">📍 Moema - São Paulo - SP</div>
-				<div class="info">📞 (11) 99249-0103</div>
-				<div class="info">✉️ <a href="mailto:contato@undercontrolfilmes.com">contato@undercontrolfilmes.com</a>
-				</div>
-			</div>
+			<div class="footer-logo">Ômega Marketing Digital</div>
 
-			<div class="icones-sociais">
-				<!-- Ícone WhatsApp -->
-				<!--<a href="https://wa.me/5511992490103" >
-						<img src="imagens/whatsapp-icon.png" alt="WhatsApp" width="30" height="30"> 
-					</a>-->
-
-				<!-- Ícone Instagram -->
-				<a href="https://instagram.com/seuperfil" target="_blank" aria-label="Instagram">
-					<img src="recursos/Instagram_icon.png" alt="Instagram" width="30" height="30">
+			<nav class="footer-nav">
+				<a href="#bm-banner">Inicio</a>
+				<a href="#eco-Sistema">Eco Sistema</a>
+				<a href="#Marketing-Planejado">Marketing Planejado</a>
+				<a href="#sobre-nos">Sobre Nós</a>
+			</nav>
+			<!--<div class="footer-socials">
+				<a href="https://facebook.com/seupagina" target="_blank">
+					<img src="recursos/facebook.png" alt="Facebook">
 				</a>
-				<!-- Ícone Facebook -->
-				<a href="https://facebook.com/seupagina" target="_blank" aria-label="Facebook">
-					<img src="recursos/facebook.png" alt="Facebook" width="30" height="30">
+				<a href="https://instagram.com/seuperfil" target="_blank">
+					<img src="recursos/Instagram_icon.png" alt="Instagram">
 				</a>
-			</div>
+				 Adicione outros ícones como LinkedIn, TikTok etc 
+			</div>-->
+			<p class="footer-copy">2025 © Ômega - Todos os direitos reservados.</p>
 		</div>
 
-		<!-- Botão flutuante do WhatsApp -->
+		<!--Botão flutuante do WhatsApp 
 		<a href="https://wa.me/5511992490103" class="whatsapp-button" target="_blank" title="Fale conosco no WhatsApp">
 			<i class="fab fa-whatsapp"></i> WhatsApp
-		</a>
+		</a>-->
 	</footer>
+
 	<script>
 		function toggleMenu() {
 			const menu = document.querySelector('nav ul');

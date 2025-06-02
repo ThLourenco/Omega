@@ -34,6 +34,118 @@
   --header-height: 80px;
 }
 
+/*sobre nos*/
+
+.sobre-nos {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  font-family: Arial, sans-serif;
+  color: #8A004F;
+    font-size: 1.25rem; /* <-- aqui */
+}
+
+.subtitulo {
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: #d60686;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.titulo {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #8A004F;
+}
+
+.conteudo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.texto-destaque {
+  flex: 1 1 250px;
+}
+
+.texto-destaque h3 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #d60686;
+  margin-bottom: 10px;
+}
+
+.linha {
+  width: 40px;
+  height: 6px;
+  background-color: #d60686;
+}
+
+.texto-principal {
+  font-size: 20px;
+  flex: 2 1 500px;
+  color: #ffffff;
+}
+
+.texto-principal p {
+  font-size: 1.45rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.texto-principal strong {
+  font-size: 1.5rem;
+  color: #d60686;
+}
+
+.texto-principal em {
+  color: #8A004F;
+  font-style: italic;
+  font-size: 2rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .conteudo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .texto-principal {
+    width: 100%;
+  }
+
+  .texto-destaque h3 {
+  font-size: 1.35rem;
+  font-weight: bold;
+  color: #d60686;
+  margin-bottom: 10px;
+}
+
+.texto-principal p {
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.texto-principal strong {
+  font-size: 1.25rem;
+  color: #d60686;
+}
+
+.texto-principal em {
+  color: #8A004F;
+  font-style: italic;
+  font-size: 2rem;
+}
+}
+
+
 /*MENU BAR*/
 
 /* Estilo geral do menu */
@@ -41,10 +153,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #000;
+  background-color: #eebad1;
   color: #fff;
   padding: 10px 20px;
   position: relative;
+  width: 100%; /* Garante que o menu ocupe toda a largura da tela */
+  box-sizing: border-box; /* Evita que o padding ultrapasse os limites */
+}
+
+.increva-se-btn{
+	border: 2px solid rgb(132, 14, 201);
+	padding: 10px;
+	border-radius: 15px;
+}
+
+.increva-se-btn:hover{
+	background-color: #d60686;
 }
 
 /* Logo */
@@ -55,20 +179,23 @@
 }
 
 .logo-icon {
-  font-size: 28px;
+  width: 60px;
+  height: auto;
+  margin-right: 10px;
 }
 
 .logo-text {
   display: flex;
   flex-direction: column;
+
 }
 
 .logo-title {
   font-weight: bold;
+
 }
 
 .logo-subtitle {
-  font-size: 12px;
   color: #aaa;
 }
 
@@ -76,12 +203,13 @@
 .menu-toggle {
   font-size: 24px;
   cursor: pointer;
-  display: none;
+  display: none; /* <- Escondido no desktop */
 }
 
 /* Menu links - desktop */
 .menu-links {
   display: flex;
+   justify-content: center; /* <- Centraliza os itens */
 }
 
 .menu-links ul {
@@ -89,17 +217,33 @@
   flex-direction: row;
   list-style: none;
   gap: 30px;
+    justify-content: center; /* <- Alternativamente pode ser aqui também */
+  padding: 0; /* Remove espaçamento padrão */
+  margin: 0; /* Remove margem padrão */
 }
 
 .menu-links li a {
-  color: white;
+  color: rgb(252, 19, 19);
   text-decoration: none;
-  font-size: 16px;
+  font-size: 1.2rem;
   transition: color 0.3s;
 }
 
 .menu-links li a:hover {
-  color: #00f0ff;
+  color: #850364;
+}
+
+/* Remove estilo padrão de links visitados */
+.menu-links li a:visited {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+/* Remove sublinhado e cores padrão ao focar ou ativar */
+.menu-links li a:focus,
+.menu-links li a:active {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
 }
 
 /* Responsividade */
@@ -108,39 +252,65 @@
     display: block;
   }
 
-  .menu-links {
-    display: none;
+ .menu-links {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
     position: absolute;
     top: 60px;
     right: 20px;
     background-color: #000;
-    padding: 15px;
+    padding: 0 15px;
     border-radius: 8px;
-  }
+    z-index: 10;
+}
 
-  .menu-links.open {
-    display: block;
-  }
+.menu-links.open {
+    max-height: 500px; /* ou um valor suficiente para todos os links */
+    padding: 15px;
+}
 
   .menu-links ul {
     flex-direction: column;
     gap: 15px;
+    padding: 10px;
+    
+  
   }
 
   .menu-links li a {
     font-size: 18px;
+    
   }
 }
-
 /*fim menu bar*/
+
+
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     position: relative;
   }
+
+.logo-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800; /* ExtraBold */
+  font-size: 1.4rem;
+  color: #8A004F; /* ajuste conforme a paleta da sua logo */
+}
+
+.logo-subtitle {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300; /* Light */
+  font-size: 1rem;
+  color: #8A004F; /* ou #555 se quiser mais discreto */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
 
   #titulo-title h1 {
     margin: 0;
@@ -335,7 +505,7 @@
   }
 
   .containerquadrado h1 {
-      font-size: 2rem;
+      font-size: 3rem;
       margin-bottom: 0px;
   }
 
@@ -349,8 +519,8 @@
 
   .quadradocard {
       flex: 1 1 80px !important;
-      height: 250px;   
-    padding: 10px 30px;
+      
+      padding: 10px 30px;
       border-radius: 10px;
       color: #fff;
       background: linear-gradient(135deg, #ff6b6b, #845ec2);
@@ -387,12 +557,12 @@
 
   .quadradocard h2 {
       margin-bottom: 16px;
-      font-size: 1.4rem;
+      font-size: 1.8rem;
       font-weight: 700;
   }
 
   .quadradocard p, .quadradocard ul {
-      font-size: 1rem;
+      font-size: 1.25rem;
       line-height: 1.6;
   }
 
@@ -434,53 +604,102 @@
 
 
   /* === RODAPÉ === */
-  .footer-bar {
-    width: 100%;
-    background-color: #000;
-    padding: 20px 0;
-    margin-top: 60px;
-    box-sizing: border-box;
+.footer-bar {
+  width: 100%;
+  background-color: #68003b;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  position: relative; /* importante */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #888;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+   position: relative; 
+}
+
+.footer-logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #c90072;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-nav a {
+  text-decoration: underline;
+  color: #c90072;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+  color: #c90072;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.footer-socials img {
+  width: 24px;
+  height: 24px;
+ 
+  transition: filter 0.3s;
+}
+
+
+.footer-copy {
+  font-size: 0.9rem;
+  color: #c90072;
+}
+
+
+/* Linhas laterais */
+.footer-container::before,
+.footer-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px; /* espessura da linha */
+  background-color: #c90072;
+}
+
+/* Quando estiver dentro do limite de 1200px */
+.footer-container::before {
+  left: 0;
+}
+
+.footer-container::after {
+  right: 0;
+}
+
+/* Estilo para telas pequenas: as linhas vão para as bordas da tela */
+@media (max-width: 1200px) {
+  .footer-container::before {
+    left: -20px; /* compensa o padding lateral (se tiver), ajuste conforme */
   }
 
-  .footer-container {
-    max-width: 1200px;
-    margin: auto;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap;
+  .footer-container::after {
+    right: -20px;
   }
-
-  .trabalhe-conosco {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
-  .trabalhe-conosco h2 {
-    margin-bottom: 10px;
-  }
-
-  .trabalhe-conosco .info {
-    font-size: 16px;
-  }
-
-  .icones-sociais {
-    display: flex;
-    gap: 20px;
-  }
-
-  .icones-sociais img {
-    width: 30px;
-    height: 30px;
-    transition: opacity 0.3s;
-  }
-
-  .icones-sociais img:hover {
-    opacity: 0.7;
-  }
+}
 
   /* === BOTÃO WHATSAPP FLUTUANTE === */
   .whatsapp-button {
